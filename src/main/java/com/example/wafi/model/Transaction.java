@@ -8,7 +8,7 @@ import lombok.Data;
 import java.util.Date;
 import java.util.UUID;
 @Data
-public class Transactions {
+public class Transaction {
     private String id;
     private Date transactionDate;
     private String transactionType;// (Deposit or Withdrawal);
@@ -16,11 +16,11 @@ public class Transactions {
     private Double amount;
     private Double accountBalance;// (after the transaction)
 
-    public Transactions() {
+    public Transaction() {
         id =  generateTransactionId();
     }
 
-    public Transactions( String transactionType, String narration, Double amount, Double accountBalance) {
+    public Transaction(String transactionType, String narration, Double amount, Double accountBalance) {
         id =  generateTransactionId();
         this.transactionDate = new Date();
         this.transactionType = transactionType;
@@ -54,7 +54,7 @@ public class Transactions {
 
 
     public static void main(String[] args) {
-        Transactions t = new Transactions();
+        Transaction t = new Transaction();
 
     }
 }
