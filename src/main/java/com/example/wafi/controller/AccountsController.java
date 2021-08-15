@@ -29,7 +29,7 @@ public class AccountsController {
 
 
         Account account = accountServiceImpl.createAccount(dto);
-        return new ResponseEntity<>(new AccountResponse(200,true,String.format("Account Created Successfully. Your account number is $%s", account.getAccountNumber())), HttpStatus.OK);
+        return new ResponseEntity<>(new AccountResponse(200,true,String.format("Account Created Successfully. Your account number is %s", account.getAccountNumber())), HttpStatus.OK);
     }
 
     @PostMapping("/deposit")
